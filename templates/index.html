@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>New page</h1>
-<!-- >make tempates of vars <!-->
-{{a}}  <!-- > give keys of var<!-->
-<h3>{{text}}</h3>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Title index{% endblock %}
+{% block content%}
+<h2>from old index</h2>
+{% include 'index_old.html' %}
+{% endblock %}

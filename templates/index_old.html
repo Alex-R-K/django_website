@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title old index</title>
+</head>
+<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- option css style:
+<style>
+.css_input{
+color: green;
+background-color: gray;
+}
+</style>
+-->
+
+<form action="{% url 'thankspage' %}" method="POST">
+    {% csrf_token %}
+    <!-- Replacement:
+    <label>Name</label>
+    <input name="name">
+    <label>Phone</label>
+    <input name="phone">
+    -->
+    {{ form.as_p }}
+    <!-- additional params for form:
+    .as_table
+    .as_p
+    .as_ul
+    -->
+    <button type="submit">Send</button>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{%if object_list%}
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+    </tr>
+    {%for obj in object_list%}
+    <tr>
+        <th>{{obj.id}}</th>
+        <th>{{obj.order_datatime}}</th>
+        <th>{{obj.order_name}}</th>
+        <th>{{obj.order_phone}}</th>
+    </tr>
+    {%endfor%}
+</table>
+{%else%}
+Got no date
+{%endif%}
+</body>
+</html>
