@@ -1,8 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Title base{% endblock %}</title>
+    <link href="{% static 'style.css' %}" rel="stylesheet"> <!-- conecting file css-->
 </head>
 <body>
 <h1>Headr</h1>
